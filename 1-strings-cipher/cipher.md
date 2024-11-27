@@ -1,17 +1,14 @@
-Let's break down the line key[key_index % len(key)]:
+### if not char.isalpha()
 
-key: This is the string 'python' that we established earlier.
-key_index: This is an integer variable that keeps track of the current position in the key string.
-%: This is the modulus operator, which returns the remainder of the division of key_index by len(key).
-len(key): This returns the length of the key string, which is 6 in this case (since 'python' has 6 characters).
-So, what's happening here is that key_index is being used to index into the key string, but with a twist. The % operator ensures that key_index wraps around to the beginning of the string when it reaches the end.
+The line if not char.isalpha(): is used to check if the current character (char) in the message is not an alphabetic character.
 
-Here's an example of how this works:
+Here's a breakdown of what this line does:
 
-key_index is 0, so key[key_index % len(key)] returns the first character of the string, 'p'.
-key_index is 1, so key[key_index % len(key)] returns the second character of the string, 'y'.
-key_index is 2, so key[key_index % len(key)] returns the third character of the string, 't'.
-...
-key_index is 5, so key[key_index % len(key)] returns the sixth character of the string, 'n'.
-key_index is 6, so key[key_index % len(key)] returns the first character of the string again, 'p', because 6 % 6 = 0.
-This wrapping behavior is what allows the Vigenère cipher to reuse the key string for longer messages.
+char.isalpha(): This method returns True if the character is an alphabetic letter (i.e., a-z or A-Z) and False otherwise.
+not char.isalpha(): This negates the result of char.isalpha(). So, it will be True if char is not an alphabetic letter (e.g., a space, punctuation, number, etc.), and False if char is an alphabetic letter.
+
+In the context of the code, if char is not an alphabetic character (like a space or punctuation), the code appends char directly to final_message without any changes. This ensures that spaces, punctuation, and other non-alphabetic characters are preserved in their original form in the encrypted or decrypted message.
+
+### .isalpha()
+
+_The .isalpha() method is a built-in string method in Python that checks whether all the characters in a string are alphabetic (i.e., letters from A-Z or a-z). It returns True if all characters in the string are alphabetic and there is at least one character; otherwise, it returns False._
